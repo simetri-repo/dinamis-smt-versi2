@@ -16,7 +16,7 @@
   <section id="content">
     <div class="content-wrap">
       <div class="container clearfix">
-        <div class="row clearfix center divcenter" style="max-width: 960px">
+        <div class="row clearfix center divcenter" style="max-width: 1200px">
           <div class="col-lg-12">
             <div class="heading-block center">
               <h3>Simetri Job Career</h3>
@@ -25,35 +25,56 @@
                 us.</span
               >
             </div>
-            <div v-for="(career, index) in career" :key="index">
-              <div class="row">
-                <div class="joblist">
-                  <section class="toggle">
-                    <h3>{{ career.nama_career }}</h3>
-                    <div class="toggle-content">
-                      <p><strong>Job Description:</strong></p>
-                      <p></p>
-                      <p>
-                        {{ career.desc_career }}
-                      </p>
-                      <p></p>
-
-                      <p><strong>Requirements:</strong></p>
-                      <p></p>
-                      <p>
-                        {{ career.require_career }}
-                      </p>
-                      <p></p>
-
-                      <p>
-                        <a
-                          class="btn btn-primary push-bottom"
-                          href="mailto:recruitment@simetriputra.co.id"
-                          >Apply Now</a
-                        >
-                      </p>
+            <div class="content">
+              <div class="row py-30">
+                <div
+                  v-for="(career, index) in career.data"
+                  :key="index"
+                  class="col-md-6 col-xl-3"
+                >
+                  <!-- Developer Plan -->
+                  <a
+                    class="
+                      block block-link-pop block-rounded block-bordered
+                      text-center
+                    "
+                    href="mailto:recruitment@simetriputra.co.id"
+                  >
+                    <div class="block-header">
+                      <h3 class="block-title font-w600">
+                        <i class="fa fa-briefcase"></i> {{ career.nama_career }}
+                      </h3>
                     </div>
-                  </section>
+                    <div class="block-content bg-body-light">
+                      <img
+                        class="rounded mx-auto d-block"
+                        alt="jobpicture"
+                        :src="'http://127.0.0.1:8000/' + career.gambar_career"
+                      />
+                    </div>
+                    <div class="block-content">
+                      <p><strong>Job Description:</strong></p>
+                      <p>{{ career.desc_career }}</p>
+                    </div>
+                    <div class="block-content">
+                      <p><strong>Job Requirements:</strong></p>
+                      <p>{{ career.require_career }}</p>
+                    </div>
+                    <div class="block-content block-content-full">
+                      <span
+                        class="
+                          btn
+                          btn-hero
+                          btn-sm
+                          btn-rounded
+                          btn-noborder
+                          btn-primary
+                        "
+                        >Apply Now</span
+                      >
+                    </div>
+                  </a>
+                  <!-- END Developer Plan -->
                 </div>
               </div>
             </div>
@@ -95,19 +116,19 @@ export default {
   },
   methods: {
     toggleOpen: function (index) {
-      this.career = this.career.map((career, index) => {
-        if (index === index) {
-          career.open = !career.open;
+      this.career = this.career.map((joblist, i) => {
+        if (index === i) {
+          joblist.open = !joblist.open;
         }
 
-        return career;
+        return joblist;
       });
     },
   },
 };
 </script>
 <style>
-.joblist {
+/* .joblist {
   display: block;
   width: 100%;
   max-width: 800px;
@@ -151,4 +172,8 @@ export default {
   overflow-y: hidden;
   transition: all 0.4s ease-out;
 }
+
+.joblist.open {
+  background-color: red;
+} */
 </style>

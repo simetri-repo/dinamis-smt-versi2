@@ -1,5 +1,5 @@
 (function () {
-var mobile = (function (exports) {
+  var mobile = (function (exports) {
     'use strict';
 
     var __assign = function () {
@@ -1690,11 +1690,11 @@ var mobile = (function (exports) {
     };
     var formatErrors = function (errors) {
       var es = errors.length > 10 ? errors.slice(0, 10).concat([{
-          path: [],
-          getErrorInfo: function () {
-            return '... (only showing first ten failures)';
-          }
-        }]) : errors;
+        path: [],
+        getErrorInfo: function () {
+          return '... (only showing first ten failures)';
+        }
+      }]) : errors;
       return map$1(es, function (e) {
         return 'Failed path: (' + e.path.join(' > ') + ')\n' + e.getErrorInfo();
       });
@@ -1702,9 +1702,9 @@ var mobile = (function (exports) {
 
     var nu$3 = function (path, getErrorInfo) {
       return SimpleResult.serror([{
-          path: path,
-          getErrorInfo: getErrorInfo
-        }]);
+        path: path,
+        getErrorInfo: getErrorInfo
+      }]);
     };
     var missingStrict = function (path, key, obj) {
       return nu$3(path, function () {
@@ -2121,7 +2121,7 @@ var mobile = (function (exports) {
       });
     };
 
-    function ClosestOrAncestor (is, ancestor, scope, a, isRoot) {
+    function ClosestOrAncestor(is, ancestor, scope, a, isRoot) {
       return is(scope, a) ? Option.some(scope) : isFunction(isRoot) && isRoot(scope) ? Option.none() : ancestor(scope, a, isRoot);
     }
 
@@ -2560,11 +2560,11 @@ var mobile = (function (exports) {
     };
 
     var SwapApis = /*#__PURE__*/Object.freeze({
-        toAlpha: toAlpha,
-        toOmega: toOmega,
-        isAlpha: isAlpha,
-        isOmega: isOmega,
-        clear: clear
+      toAlpha: toAlpha,
+      toOmega: toOmega,
+      isAlpha: isAlpha,
+      isOmega: isOmega,
+      clear: clear
     });
 
     var SwapSchema = [
@@ -2698,20 +2698,20 @@ var mobile = (function (exports) {
     };
     var events = function (receiveConfig) {
       return derive([run(receive(), function (component, message) {
-          var channelMap = receiveConfig.channels;
-          var channels = keys(channelMap);
-          var targetChannels = chooseChannels(channels, message);
-          each$1(targetChannels, function (ch) {
-            var channelInfo = channelMap[ch];
-            var channelSchema = channelInfo.schema;
-            var data = asRawOrDie('channel[' + ch + '] data\nReceiver: ' + element(component.element()), channelSchema, message.data());
-            channelInfo.onReceive(component, data);
-          });
-        })]);
+        var channelMap = receiveConfig.channels;
+        var channels = keys(channelMap);
+        var targetChannels = chooseChannels(channels, message);
+        each$1(targetChannels, function (ch) {
+          var channelInfo = channelMap[ch];
+          var channelSchema = channelInfo.schema;
+          var data = asRawOrDie('channel[' + ch + '] data\nReceiver: ' + element(component.element()), channelSchema, message.data());
+          channelInfo.onReceive(component, data);
+        });
+      })]);
     };
 
     var ActiveReceiving = /*#__PURE__*/Object.freeze({
-        events: events
+      events: events
     });
 
     var cat = function (arr) {
@@ -2783,11 +2783,11 @@ var mobile = (function (exports) {
         write: function () {
           var finishTime = new Date().getTime();
           if (contains([
-              'mousemove',
-              'mouseover',
-              'mouseout',
-              systemInit()
-            ], eventName)) {
+            'mousemove',
+            'mouseover',
+            'mouseout',
+            systemInit()
+          ], eventName)) {
             return;
           }
           console.log(eventName, {
@@ -2796,10 +2796,10 @@ var mobile = (function (exports) {
             target: initialTarget.dom(),
             sequence: map$1(sequence, function (s) {
               if (!contains([
-                  'cut',
-                  'stopped',
-                  'response'
-                ], s.outcome)) {
+                'cut',
+                'stopped',
+                'response'
+              ], s.outcome)) {
                 return s.outcome;
               } else {
                 return '{' + s.purpose + '} ' + s.outcome + ' at (' + element(s.target) + ')';
@@ -2817,16 +2817,16 @@ var mobile = (function (exports) {
         });
       }).getOr(EventConfiguration.NORMAL);
       switch (status$$1) {
-      case EventConfiguration.NORMAL:
-        return f(noLogger());
-      case EventConfiguration.LOGGING: {
+        case EventConfiguration.NORMAL:
+          return f(noLogger());
+        case EventConfiguration.LOGGING: {
           var logger = makeEventLogger(eventName, initialTarget);
           var output = f(logger);
           logger.write();
           return output;
         }
-      case EventConfiguration.STOP:
-        return true;
+        case EventConfiguration.STOP:
+          return true;
       }
     };
     var path$1 = [
@@ -2916,9 +2916,9 @@ var mobile = (function (exports) {
     var initSize = constant(_initSize);
 
     var ReceivingSchema = [strictOf('channels', setOf$1(Result.value, objOfOnly([
-        onStrictHandler('onReceive'),
-        defaulted$1('schema', anyValue$1())
-      ])))];
+      onStrictHandler('onReceive'),
+      defaulted$1('schema', anyValue$1())
+    ])))];
 
     var Receiving = create$1({
       fields: ReceivingSchema,
@@ -2964,12 +2964,12 @@ var mobile = (function (exports) {
     };
 
     var ToggleApis = /*#__PURE__*/Object.freeze({
-        onLoad: onLoad,
-        toggle: toggle$2,
-        isOn: isOn,
-        on: on,
-        off: off,
-        set: set$2
+      onLoad: onLoad,
+      toggle: toggle$2,
+      isOn: isOn,
+      on: on,
+      off: off,
+      set: set$2
     });
 
     var exhibit = function (base, toggleConfig, toggleState) {
@@ -2985,8 +2985,8 @@ var mobile = (function (exports) {
     };
 
     var ActiveToggle = /*#__PURE__*/Object.freeze({
-        exhibit: exhibit,
-        events: events$1
+      exhibit: exhibit,
+      events: events$1
     });
 
     var init = function (spec) {
@@ -3012,7 +3012,7 @@ var mobile = (function (exports) {
     };
 
     var TogglingState = /*#__PURE__*/Object.freeze({
-        init: init
+      init: init
     });
 
     var updatePressed = function (component, ariaInfo, status) {
@@ -3130,9 +3130,9 @@ var mobile = (function (exports) {
     };
 
     var FocusApis = /*#__PURE__*/Object.freeze({
-        focus: focus$3,
-        blur: blur$1,
-        isFocused: isFocused
+      focus: focus$3,
+      blur: blur$1,
+      isFocused: isFocused
     });
 
     var exhibit$1 = function (base, focusConfig) {
@@ -3141,16 +3141,16 @@ var mobile = (function (exports) {
     };
     var events$3 = function (focusConfig) {
       return derive([run(focus$1(), function (component, simulatedEvent) {
-          focus$3(component, focusConfig);
-          simulatedEvent.stop();
-        })].concat(focusConfig.stopMousedown ? [run(mousedown(), function (_, simulatedEvent) {
-          simulatedEvent.event().prevent();
-        })] : []));
+        focus$3(component, focusConfig);
+        simulatedEvent.stop();
+      })].concat(focusConfig.stopMousedown ? [run(mousedown(), function (_, simulatedEvent) {
+        simulatedEvent.event().prevent();
+      })] : []));
     };
 
     var ActiveFocus = /*#__PURE__*/Object.freeze({
-        exhibit: exhibit$1,
-        events: events$3
+      exhibit: exhibit$1,
+      events: events$3
     });
 
     var FocusSchema = [
@@ -3222,7 +3222,7 @@ var mobile = (function (exports) {
       return e.dom().offsetWidth;
     };
 
-    function Dimension (name, getOffset) {
+    function Dimension(name, getOffset) {
       var set = function (element, h) {
         if (!isNumber(h) && !h.match(/^[0-9]+$/)) {
           throw new Error(name + '.set accepts only positive integer values. Value was ' + h);
@@ -3508,20 +3508,20 @@ var mobile = (function (exports) {
     };
 
     var HighlightApis = /*#__PURE__*/Object.freeze({
-        dehighlightAll: dehighlightAll,
-        dehighlight: dehighlight,
-        highlight: highlight,
-        highlightFirst: highlightFirst,
-        highlightLast: highlightLast,
-        highlightAt: highlightAt,
-        highlightBy: highlightBy,
-        isHighlighted: isHighlighted,
-        getHighlighted: getHighlighted,
-        getFirst: getFirst,
-        getLast: getLast,
-        getPrevious: getPrevious,
-        getNext: getNext,
-        getCandidates: getCandidates
+      dehighlightAll: dehighlightAll,
+      dehighlight: dehighlight,
+      highlight: highlight,
+      highlightFirst: highlightFirst,
+      highlightLast: highlightLast,
+      highlightAt: highlightAt,
+      highlightBy: highlightBy,
+      isHighlighted: isHighlighted,
+      getHighlighted: getHighlighted,
+      getFirst: getFirst,
+      getLast: getLast,
+      getPrevious: getPrevious,
+      getNext: getNext,
+      getCandidates: getCandidates
     });
 
     var HighlightSchema = [
@@ -3778,9 +3778,9 @@ var mobile = (function (exports) {
       var downExec = executeConfig.useDown ? DOWN() : [];
       var execKeys = spaceExec.concat(enterExec).concat(downExec);
       return [rule(inSet(execKeys), execute$1)].concat(executeConfig.useControlEnter ? [rule(and([
-          isControl,
-          inSet(ENTER())
-        ]), execute$1)] : []);
+        isControl,
+        inSet(ENTER())
+      ]), execute$1)] : []);
     };
     var getKeyupRules = function (component, simulatedEvent, executeConfig, executeState) {
       return executeConfig.useSpace && !inside(component.element()) ? [rule(inSet(SPACE()), stopEventForFirefox)] : [];
@@ -3829,8 +3829,8 @@ var mobile = (function (exports) {
     };
 
     var KeyingState = /*#__PURE__*/Object.freeze({
-        flatgrid: flatgrid,
-        init: init$1
+      flatgrid: flatgrid,
+      init: init$1
     });
 
     var onDirection = function (isLtr, isRtl) {
@@ -4321,14 +4321,14 @@ var mobile = (function (exports) {
     var special = SpecialType.schema();
 
     var KeyboardBranches = /*#__PURE__*/Object.freeze({
-        acyclic: acyclic,
-        cyclic: cyclic,
-        flow: flow,
-        flatgrid: flatgrid$1,
-        matrix: matrix,
-        execution: execution,
-        menu: menu,
-        special: special
+      acyclic: acyclic,
+      cyclic: cyclic,
+      flow: flow,
+      flatgrid: flatgrid$1,
+      matrix: matrix,
+      execution: execution,
+      menu: menu,
+      special: special
     });
 
     var Keying = createModes$1({
@@ -4394,8 +4394,8 @@ var mobile = (function (exports) {
     ]);
     var subPlaceholder = function (owner, detail, compSpec, placeholders) {
       if (owner.exists(function (o) {
-          return o !== compSpec.owner;
-        })) {
+        return o !== compSpec.owner;
+      })) {
         return adt$2.single(true, constant(compSpec));
       }
       return readOptFrom$1(placeholders, compSpec.name).fold(function () {
@@ -4850,8 +4850,8 @@ var mobile = (function (exports) {
     };
 
     var ActiveUnselecting = /*#__PURE__*/Object.freeze({
-        events: events$4,
-        exhibit: exhibit$2
+      events: events$4,
+      exhibit: exhibit$2
     });
 
     var Unselecting = create$1({
@@ -4992,8 +4992,8 @@ var mobile = (function (exports) {
     });
     var spectrumPart = required({
       schema: [state$1('mouseIsDown', function () {
-          return Cell(false);
-        })],
+        return Cell(false);
+      })],
       name: 'spectrum',
       overrides: function (detail) {
         var modelDetail = detail.model;
@@ -5069,11 +5069,11 @@ var mobile = (function (exports) {
     };
 
     var RepresentApis = /*#__PURE__*/Object.freeze({
-        onLoad: onLoad$1,
-        onUnload: onUnload,
-        setValue: setValue,
-        getValue: getValue,
-        getState: getState
+      onLoad: onLoad$1,
+      onUnload: onUnload,
+      setValue: setValue,
+      getValue: getValue,
+      getState: getState
     });
 
     var events$5 = function (repConfig, repState) {
@@ -5089,7 +5089,7 @@ var mobile = (function (exports) {
     };
 
     var ActiveRepresenting = /*#__PURE__*/Object.freeze({
-        events: events$5
+      events: events$5
     });
 
     var memory = function () {
@@ -5166,10 +5166,10 @@ var mobile = (function (exports) {
     };
 
     var RepresentState = /*#__PURE__*/Object.freeze({
-        memory: memory,
-        dataset: dataset,
-        manual: manual,
-        init: init$2
+      memory: memory,
+      dataset: dataset,
+      manual: manual,
+      init: init$2
     });
 
     var setValue$1 = function (component, repConfig, repState, data) {
@@ -5683,18 +5683,18 @@ var mobile = (function (exports) {
     };
 
     var HorizontalModel = /*#__PURE__*/Object.freeze({
-        setValueFrom: setValueFrom,
-        setToMin: setToMin,
-        setToMax: setToMax,
-        findValueOfOffset: findValueOfOffset,
-        getValueFromEvent: getValueFromEvent,
-        findPositionOfValue: findPositionOfValue,
-        setPositionFromValue: setPositionFromValue,
-        onLeft: onLeft,
-        onRight: onRight,
-        onUp: onUp,
-        onDown: onDown,
-        edgeActions: edgeActions
+      setValueFrom: setValueFrom,
+      setToMin: setToMin,
+      setToMax: setToMax,
+      findValueOfOffset: findValueOfOffset,
+      getValueFromEvent: getValueFromEvent,
+      findPositionOfValue: findPositionOfValue,
+      setPositionFromValue: setPositionFromValue,
+      onLeft: onLeft,
+      onRight: onRight,
+      onUp: onUp,
+      onDown: onDown,
+      edgeActions: edgeActions
     });
 
     var fireSliderChange$2 = function (spectrum, value) {
@@ -5805,18 +5805,18 @@ var mobile = (function (exports) {
     };
 
     var VerticalModel = /*#__PURE__*/Object.freeze({
-        setValueFrom: setValueFrom$1,
-        setToMin: setToMin$1,
-        setToMax: setToMax$1,
-        findValueOfOffset: findValueOfOffset$1,
-        getValueFromEvent: getValueFromEvent$1,
-        findPositionOfValue: findPositionOfValue$1,
-        setPositionFromValue: setPositionFromValue$1,
-        onLeft: onLeft$1,
-        onRight: onRight$1,
-        onUp: onUp$1,
-        onDown: onDown$1,
-        edgeActions: edgeActions$1
+      setValueFrom: setValueFrom$1,
+      setToMin: setToMin$1,
+      setToMax: setToMax$1,
+      findValueOfOffset: findValueOfOffset$1,
+      getValueFromEvent: getValueFromEvent$1,
+      findPositionOfValue: findPositionOfValue$1,
+      setPositionFromValue: setPositionFromValue$1,
+      onLeft: onLeft$1,
+      onRight: onRight$1,
+      onUp: onUp$1,
+      onDown: onDown$1,
+      edgeActions: edgeActions$1
     });
 
     var fireSliderChange$3 = function (spectrum, value) {
@@ -5887,16 +5887,16 @@ var mobile = (function (exports) {
     };
 
     var TwoDModel = /*#__PURE__*/Object.freeze({
-        setValueFrom: setValueFrom$2,
-        setToMin: setToMin$2,
-        setToMax: setToMax$2,
-        getValueFromEvent: getValueFromEvent$2,
-        setPositionFromValue: setPositionFromValue$2,
-        onLeft: onLeft$2,
-        onRight: onRight$2,
-        onUp: onUp$2,
-        onDown: onDown$2,
-        edgeActions: edgeActions$2
+      setValueFrom: setValueFrom$2,
+      setToMin: setToMin$2,
+      setToMax: setToMax$2,
+      getValueFromEvent: getValueFromEvent$2,
+      setPositionFromValue: setPositionFromValue$2,
+      onLeft: onLeft$2,
+      onRight: onRight$2,
+      onUp: onUp$2,
+      onDown: onDown$2,
+      edgeActions: edgeActions$2
     });
 
     var isTouch$2 = PlatformDetection$1.detect().deviceType.isTouch();
@@ -5949,8 +5949,8 @@ var mobile = (function (exports) {
         Representing
       ])
     ].concat(!isTouch$2 ? [state$1('mouseIsDown', function () {
-        return Cell(false);
-      })] : []);
+      return Cell(false);
+    })] : []);
 
     var isTouch$3 = PlatformDetection$1.detect().deviceType.isTouch();
     var sketch$1 = function (detail, components$$1, _spec, _externals) {
@@ -6021,11 +6021,11 @@ var mobile = (function (exports) {
         components: components$$1,
         behaviours: augment(detail.sliderBehaviours, flatten([
           !isTouch$3 ? [Keying.config({
-              mode: 'special',
-              focusIn: function (slider) {
-                return getPart(slider, detail, 'spectrum').map(Keying.focusIn).map(constant(true));
-              }
-            })] : [],
+            mode: 'special',
+            focusIn: function (slider) {
+              return getPart(slider, detail, 'spectrum').map(Keying.focusIn).map(constant(true));
+            }
+          })] : [],
           [
             Representing.config({
               store: {
@@ -6098,9 +6098,9 @@ var mobile = (function (exports) {
       return Buttons.forToolbar(clazz, function () {
         var items = makeItems();
         realm.setContextToolbar([{
-            label: clazz + ' group',
-            items: items
-          }]);
+          label: clazz + ' group',
+          items: items
+        }]);
       }, {});
     };
 
@@ -6577,17 +6577,17 @@ var mobile = (function (exports) {
     };
     var Promise$1 = window.Promise ? window.Promise : promise();
 
-    function Blob (parts, properties) {
+    function Blob(parts, properties) {
       var f = Global$1.getOrDie('Blob');
       return new f(parts, properties);
     }
 
-    function FileReader () {
+    function FileReader() {
       var f = Global$1.getOrDie('FileReader');
       return new f();
     }
 
-    function Uint8Array (arr) {
+    function Uint8Array(arr) {
       var f = Global$1.getOrDie('Uint8Array');
       return new f(arr);
     }
@@ -6982,7 +6982,7 @@ var mobile = (function (exports) {
     };
 
     var ComposeApis = /*#__PURE__*/Object.freeze({
-        getCurrent: getCurrent
+      getCurrent: getCurrent
     });
 
     var ComposeSchema = [strict$1('find')];
@@ -7034,8 +7034,8 @@ var mobile = (function (exports) {
           Composing.config({ find: Option.some })
         ]),
         events: derive([runOnAttached(function (component, simulatedEvent) {
-            Representing.setValue(component, detail.getInitialValue());
-          })])
+          Representing.setValue(component, detail.getInitialValue());
+        })])
       };
     };
     var DataField = single$2({
@@ -7079,30 +7079,30 @@ var mobile = (function (exports) {
     ]);
     var focusBehaviours = function (detail) {
       return derive$1([Focusing.config({
-          onFocus: detail.selectOnFocus === false ? noop : function (component) {
-            var input = component.element();
-            var value = get$a(input);
-            input.dom().setSelectionRange(0, value.length);
-          }
-        })]);
+        onFocus: detail.selectOnFocus === false ? noop : function (component) {
+          var input = component.element();
+          var value = get$a(input);
+          input.dom().setSelectionRange(0, value.length);
+        }
+      })]);
     };
     var behaviours = function (detail) {
       return __assign({}, focusBehaviours(detail), augment(detail.inputBehaviours, [Representing.config({
-          store: {
-            mode: 'manual',
-            initialValue: detail.data.getOr(undefined),
-            getValue: function (input) {
-              return get$a(input.element());
-            },
-            setValue: function (input, data) {
-              var current = get$a(input.element());
-              if (current !== data) {
-                set$7(input.element(), data);
-              }
-            }
+        store: {
+          mode: 'manual',
+          initialValue: detail.data.getOr(undefined),
+          getValue: function (input) {
+            return get$a(input.element());
           },
-          onSetValue: detail.onSetValue
-        })]));
+          setValue: function (input, data) {
+            var current = get$a(input.element());
+            if (current !== data) {
+              set$7(input.element(), data);
+            }
+          }
+        },
+        onSetValue: detail.onSetValue
+      })]));
     };
     var dom$3 = function (detail) {
       return {
@@ -7131,14 +7131,14 @@ var mobile = (function (exports) {
     var exhibit$3 = function (base, tabConfig) {
       return nu$5({
         attributes: wrapAll$1([{
-            key: tabConfig.tabAttr,
-            value: 'true'
-          }])
+          key: tabConfig.tabAttr,
+          value: 'true'
+        }])
       });
     };
 
     var ActiveTabstopping = /*#__PURE__*/Object.freeze({
-        exhibit: exhibit$3
+      exhibit: exhibit$3
     });
 
     var TabstopSchema = [defaulted$1('tabAttr', 'data-alloy-tabstop')];
@@ -7186,11 +7186,11 @@ var mobile = (function (exports) {
               }
             }),
             config(clearInputBehaviour, [run(input(), function (iContainer) {
-                var input$$1 = inputSpec.get(iContainer);
-                var val = Representing.getValue(input$$1);
-                var f = val.length > 0 ? Toggling.off : Toggling.on;
-                f(iContainer);
-              })])
+              var input$$1 = inputSpec.get(iContainer);
+              var val = Representing.getValue(input$$1);
+              var f = val.length > 0 ? Toggling.off : Toggling.on;
+              f(iContainer);
+            })])
           ])
         })
       };
@@ -7260,10 +7260,10 @@ var mobile = (function (exports) {
     };
 
     var DisableApis = /*#__PURE__*/Object.freeze({
-        enable: enable,
-        disable: disable,
-        isDisabled: isDisabled,
-        onLoad: onLoad$5
+      enable: enable,
+      disable: disable,
+      isDisabled: isDisabled,
+      onLoad: onLoad$5
     });
 
     var exhibit$4 = function (base, disableConfig, disableState) {
@@ -7279,8 +7279,8 @@ var mobile = (function (exports) {
     };
 
     var ActiveDisable = /*#__PURE__*/Object.freeze({
-        exhibit: exhibit$4,
-        events: events$7
+      exhibit: exhibit$4,
+      events: events$7
     });
 
     var DisableSchema = [
@@ -7335,28 +7335,28 @@ var mobile = (function (exports) {
         'dom': detail.dom,
         'components': components$$1,
         'behaviours': augment(detail.formBehaviours, [Representing.config({
-            store: {
-              mode: 'manual',
-              getValue: function (form) {
-                var resPs = getAllParts(form, detail);
-                return map(resPs, function (resPThunk, pName) {
-                  return resPThunk().bind(function (v) {
-                    var opt = Composing.getCurrent(v);
-                    return toResult$1(opt, 'missing current');
-                  }).map(Representing.getValue);
-                });
-              },
-              setValue: function (form, values$$1) {
-                each(values$$1, function (newValue, key) {
-                  getPart(form, detail, key).each(function (wrapper) {
-                    Composing.getCurrent(wrapper).each(function (field) {
-                      Representing.setValue(field, newValue);
-                    });
+          store: {
+            mode: 'manual',
+            getValue: function (form) {
+              var resPs = getAllParts(form, detail);
+              return map(resPs, function (resPThunk, pName) {
+                return resPThunk().bind(function (v) {
+                  var opt = Composing.getCurrent(v);
+                  return toResult$1(opt, 'missing current');
+                }).map(Representing.getValue);
+              });
+            },
+            setValue: function (form, values$$1) {
+              each(values$$1, function (newValue, key) {
+                getPart(form, detail, key).each(function (wrapper) {
+                  Composing.getCurrent(wrapper).each(function (field) {
+                    Representing.setValue(field, newValue);
                   });
                 });
-              }
+              });
             }
-          })]),
+          }
+        })]),
         'apis': {
           getField: function (form, key) {
             return getPart(form, detail, key).bind(Composing.getCurrent);
@@ -7491,9 +7491,9 @@ var mobile = (function (exports) {
             emitWith(button, navigateEvent, { direction: direction });
           },
           buttonBehaviours: derive$1([Disabling.config({
-              disableClass: Styles.resolve('toolbar-navigation-disabled'),
-              disabled: !enabled
-            })])
+            disableClass: Styles.resolve('toolbar-navigation-disabled'),
+            disabled: !enabled
+          })])
         });
       };
       var reposition = function (dialog, message) {
@@ -7533,18 +7533,18 @@ var mobile = (function (exports) {
         return {
           dom: dom$2('<div class="${prefix}-serialised-dialog"></div>'),
           components: [Container.sketch({
-              dom: dom$2('<div class="${prefix}-serialised-dialog-chain" style="left: 0px; position: absolute;"></div>'),
-              components: map$1(spec$$1.fields, function (field$$1, i) {
-                return i <= spec$$1.maxFieldIndex ? Container.sketch({
-                  dom: dom$2('<div class="${prefix}-serialised-dialog-screen"></div>'),
-                  components: [
-                    navigationButton(-1, 'previous', i > 0),
-                    parts.field(field$$1.name, field$$1.spec),
-                    navigationButton(+1, 'next', i < spec$$1.maxFieldIndex)
-                  ]
-                }) : parts.field(field$$1.name, field$$1.spec);
-              })
-            })],
+            dom: dom$2('<div class="${prefix}-serialised-dialog-chain" style="left: 0px; position: absolute;"></div>'),
+            components: map$1(spec$$1.fields, function (field$$1, i) {
+              return i <= spec$$1.maxFieldIndex ? Container.sketch({
+                dom: dom$2('<div class="${prefix}-serialised-dialog-screen"></div>'),
+                components: [
+                  navigationButton(-1, 'previous', i > 0),
+                  parts.field(field$$1.name, field$$1.spec),
+                  navigationButton(+1, 'next', i < spec$$1.maxFieldIndex)
+                ]
+              }) : parts.field(field$$1.name, field$$1.spec);
+            })
+          })],
           formBehaviours: derive$1([
             Receivers.orientation(function (dialog, message) {
               reposition(dialog, message);
@@ -7591,9 +7591,9 @@ var mobile = (function (exports) {
       var memDots = record({
         dom: dom$2('<div class="${prefix}-dot-container"></div>'),
         behaviours: derive$1([Highlighting.config({
-            highlightClass: Styles.resolve('dot-active'),
-            itemClass: Styles.resolve('dot-item')
-          })]),
+          highlightClass: Styles.resolve('dot-active'),
+          itemClass: Styles.resolve('dot-item')
+        })]),
         components: bind(spec$$1.fields, function (_f, i) {
           return i <= spec$$1.maxFieldIndex ? [spec('<div class="${prefix}-dot-item ${prefix}-icon-full-dot ${prefix}-icon"></div>')] : [];
         })
@@ -7638,32 +7638,32 @@ var mobile = (function (exports) {
 
     var getGroups = cached(function (realm, editor) {
       return [{
-          label: 'the link group',
-          items: [sketch$7({
-              fields: [
-                field$2('url', 'Type or paste URL'),
-                field$2('text', 'Link text'),
-                field$2('title', 'Link title'),
-                field$2('target', 'Link target'),
-                hidden('link')
-              ],
-              maxFieldIndex: [
-                'url',
-                'text',
-                'title',
-                'target'
-              ].length - 1,
-              getInitialValue: function () {
-                return Option.some(LinkBridge.getInfo(editor));
-              },
-              onExecute: function (dialog) {
-                var info = Representing.getValue(dialog);
-                LinkBridge.applyInfo(editor, info);
-                realm.restoreToolbar();
-                editor.focus();
-              }
-            })]
-        }];
+        label: 'the link group',
+        items: [sketch$7({
+          fields: [
+            field$2('url', 'Type or paste URL'),
+            field$2('text', 'Link text'),
+            field$2('title', 'Link title'),
+            field$2('target', 'Link target'),
+            hidden('link')
+          ],
+          maxFieldIndex: [
+            'url',
+            'text',
+            'title',
+            'target'
+          ].length - 1,
+          getInitialValue: function () {
+            return Option.some(LinkBridge.getInfo(editor));
+          },
+          onExecute: function (dialog) {
+            var info = Representing.getValue(dialog);
+            LinkBridge.applyInfo(editor, info);
+            realm.restoreToolbar();
+            editor.focus();
+          }
+        })]
+      }];
     });
     var sketch$8 = function (realm, editor) {
       return Buttons.forToolbarStateAction(editor, 'link', 'link', function () {
@@ -7800,18 +7800,18 @@ var mobile = (function (exports) {
       return eq(originator, component.element()) && !eq(originator, target);
     };
     var events$8 = derive([can(focus$1(), function (component, simulatedEvent) {
-        var originator = simulatedEvent.event().originator();
-        var target = simulatedEvent.event().target();
-        if (isRecursive(component, originator, target)) {
-          console.warn(focus$1() + ' did not get interpreted by the desired target. ' + '\nOriginator: ' + element(originator) + '\nTarget: ' + element(target) + '\nCheck the ' + focus$1() + ' event handlers');
-          return false;
-        } else {
-          return true;
-        }
-      })]);
+      var originator = simulatedEvent.event().originator();
+      var target = simulatedEvent.event().target();
+      if (isRecursive(component, originator, target)) {
+        console.warn(focus$1() + ' did not get interpreted by the desired target. ' + '\nOriginator: ' + element(originator) + '\nTarget: ' + element(target) + '\nCheck the ' + focus$1() + ' event handlers');
+        return false;
+      } else {
+        return true;
+      }
+    })]);
 
     var DefaultEvents = /*#__PURE__*/Object.freeze({
-        events: events$8
+      events: events$8
     });
 
     var make$1 = identity;
@@ -8005,8 +8005,8 @@ var mobile = (function (exports) {
     };
     var missingOrderError = function (eventName, tuples) {
       return Result.error(['The event (' + eventName + ') has more than one behaviour that listens to it.\nWhen this occurs, you must ' + 'specify an event ordering for the behaviours in your spec (e.g. [ "listing", "toggling" ]).\nThe behaviours that ' + 'can trigger it are: ' + Json.stringify(map$1(tuples, function (c) {
-          return c.name();
-        }), null, 2)]);
+        return c.name();
+      }), null, 2)]);
     };
     var fuse$1 = function (tuples, eventOrder, eventName) {
       var order = eventOrder[eventName];
@@ -8376,22 +8376,22 @@ var mobile = (function (exports) {
       return 'item-widget';
     };
     var parts = constant([required({
-        name: 'widget',
-        overrides: function (detail) {
-          return {
-            behaviours: derive$1([Representing.config({
-                store: {
-                  mode: 'manual',
-                  getValue: function (component) {
-                    return detail.data;
-                  },
-                  setValue: function () {
-                  }
-                }
-              })])
-          };
-        }
-      })]);
+      name: 'widget',
+      overrides: function (detail) {
+        return {
+          behaviours: derive$1([Representing.config({
+            store: {
+              mode: 'manual',
+              getValue: function (component) {
+                return detail.data;
+              },
+              setValue: function () {
+              }
+            }
+          })])
+        };
+      }
+    })]);
 
     var builder$2 = function (detail) {
       var subs = substitutes(owner$2(), detail, parts());
@@ -8518,25 +8518,25 @@ var mobile = (function (exports) {
       };
     };
     var parts$1 = constant([group({
-        factory: {
-          sketch: function (spec) {
-            var itemInfo = asRawOrDie('menu.spec item', itemSchema$1, spec);
-            return itemInfo.builder(itemInfo);
-          }
-        },
-        name: 'items',
-        unit: 'item',
-        defaults: function (detail, u) {
-          return u.hasOwnProperty('uid') ? u : __assign({}, u, { uid: generate$3('item') });
-        },
-        overrides: function (detail, u) {
-          return {
-            type: u.type,
-            ignoreFocus: detail.fakeFocus,
-            domModification: { classes: [detail.markers.item] }
-          };
+      factory: {
+        sketch: function (spec) {
+          var itemInfo = asRawOrDie('menu.spec item', itemSchema$1, spec);
+          return itemInfo.builder(itemInfo);
         }
-      })]);
+      },
+      name: 'items',
+      unit: 'item',
+      defaults: function (detail, u) {
+        return u.hasOwnProperty('uid') ? u : __assign({}, u, { uid: generate$3('item') });
+      },
+      overrides: function (detail, u) {
+        return {
+          type: u.type,
+          ignoreFocus: detail.fakeFocus,
+          domModification: { classes: [detail.markers.item] }
+        };
+      }
+    })]);
     var schema$d = constant([
       strict$1('value'),
       strict$1('items'),
@@ -8692,13 +8692,13 @@ var mobile = (function (exports) {
     };
 
     var ReplaceApis = /*#__PURE__*/Object.freeze({
-        append: append$2,
-        prepend: prepend$2,
-        remove: remove$7,
-        replaceAt: replaceAt,
-        replaceBy: replaceBy,
-        set: set$8,
-        contents: contents
+      append: append$2,
+      prepend: prepend$2,
+      remove: remove$7,
+      replaceAt: replaceAt,
+      replaceBy: replaceBy,
+      set: set$8,
+      contents: contents
     });
 
     var Replacing = create$1({
@@ -9039,11 +9039,11 @@ var mobile = (function (exports) {
           });
         })
       ].concat(detail.navigateOnHover ? [run(hover(), function (sandbox, simulatedEvent) {
-          var item = simulatedEvent.event().item();
-          updateView(sandbox, item);
-          expandRight(sandbox, item, ExpandHighlightDecision.HighlightParent);
-          detail.onHover(sandbox, item);
-        })] : []));
+        var item = simulatedEvent.event().item();
+        updateView(sandbox, item);
+        expandRight(sandbox, item, ExpandHighlightDecision.HighlightParent);
+        detail.onHover(sandbox, item);
+      })] : []));
       var collapseMenuApi = function (container) {
         Highlighting.getHighlighted(container).each(function (currentMenu) {
           Highlighting.getHighlighted(currentMenu).each(function (currentItem) {
@@ -9231,12 +9231,12 @@ var mobile = (function (exports) {
     };
 
     var TransitionApis = /*#__PURE__*/Object.freeze({
-        findRoute: findRoute,
-        disableTransition: disableTransition,
-        getCurrentRoute: getCurrentRoute,
-        jumpTo: jumpTo,
-        progressTo: progressTo,
-        getState: getState$1
+      findRoute: findRoute,
+      disableTransition: disableTransition,
+      getCurrentRoute: getCurrentRoute,
+      jumpTo: jumpTo,
+      progressTo: progressTo,
+      getState: getState$1
     });
 
     var events$9 = function (transConfig, transState) {
@@ -9261,7 +9261,7 @@ var mobile = (function (exports) {
     };
 
     var ActiveTransitioning = /*#__PURE__*/Object.freeze({
-        events: events$9
+      events: events$9
     });
 
     var TransitionSchema = [
@@ -9271,9 +9271,9 @@ var mobile = (function (exports) {
       onHandler('onTransition'),
       onHandler('onFinish'),
       strictOf('routes', setOf$1(Result.value, setOf$1(Result.value, objOfOnly([optionObjOfOnly('transition', [
-          strict$1('property'),
-          strict$1('transitionClass')
-        ])]))))
+        strict$1('property'),
+        strict$1('transitionClass')
+      ])]))))
     ];
 
     var createRoutes = function (routes) {
@@ -9399,16 +9399,16 @@ var mobile = (function (exports) {
           selected: selected
         },
         itemBehaviours: derive$1(isMenu ? [] : [Receivers.format(value, function (comp, status) {
-            var toggle = status ? Toggling.on : Toggling.off;
-            toggle(comp);
-          })]),
+          var toggle = status ? Toggling.on : Toggling.off;
+          toggle(comp);
+        })]),
         components: [{
-            dom: {
-              tag: 'div',
-              attributes: { style: preview },
-              innerHtml: text$$1
-            }
-          }]
+          dom: {
+            tag: 'div',
+            attributes: { style: preview },
+            innerHtml: text$$1
+          }
+        }]
       };
     };
     var makeMenu = function (value, items, memMenuThunk, collapsable) {
@@ -9444,29 +9444,29 @@ var mobile = (function (exports) {
             },
             components: [Menu.parts().items({})],
             behaviours: derive$1([config('adhoc-scrollable-menu', [
-                runOnAttached(function (component, simulatedEvent) {
-                  set$3(component.element(), 'overflow-y', 'auto');
-                  set$3(component.element(), '-webkit-overflow-scrolling', 'touch');
-                  Scrollable.register(component.element());
-                }),
-                runOnDetached(function (component) {
-                  remove$5(component.element(), 'overflow-y');
-                  remove$5(component.element(), '-webkit-overflow-scrolling');
-                  Scrollable.deregister(component.element());
-                })
-              ])])
+              runOnAttached(function (component, simulatedEvent) {
+                set$3(component.element(), 'overflow-y', 'auto');
+                set$3(component.element(), '-webkit-overflow-scrolling', 'touch');
+                Scrollable.register(component.element());
+              }),
+              runOnDetached(function (component) {
+                remove$5(component.element(), 'overflow-y');
+                remove$5(component.element(), '-webkit-overflow-scrolling');
+                Scrollable.deregister(component.element());
+              })
+            ])])
           }
         ],
         items: items,
         menuBehaviours: derive$1([Transitioning.config({
-            initialState: 'after',
-            routes: Transitioning.createTristate('before', 'current', 'after', {
-              transition: {
-                property: 'transform',
-                transitionClass: 'transitioning'
-              }
-            })
-          })])
+          initialState: 'after',
+          routes: Transitioning.createTristate('before', 'current', 'after', {
+            transition: {
+              property: 'transform',
+              transitionClass: 'transitioning'
+            }
+          })
+        })])
       };
     };
     var sketch$9 = function (settings) {
@@ -9877,7 +9877,7 @@ var mobile = (function (exports) {
       getActualWidth: getActualWidth
     };
 
-    function DelayedFunction (fun, delay) {
+    function DelayedFunction(fun, delay) {
       var ref = null;
       var schedule = function () {
         var args = [];
@@ -10068,7 +10068,7 @@ var mobile = (function (exports) {
     };
     var DataAttributes = { safeParse: safeParse };
 
-    function NodeValue (is, name) {
+    function NodeValue(is, name) {
       var get = function (element) {
         if (!is(element)) {
           throw new Error('Can only get ' + name + ' value of a ' + name + ' node');
@@ -10489,9 +10489,9 @@ var mobile = (function (exports) {
       if ('input' === name$$1) {
         return Situ.after(element);
       } else if (!contains([
-          'br',
-          'img'
-        ], name$$1)) {
+        'br',
+        'img'
+      ], name$$1)) {
         return Situ.on(element, offset);
       } else {
         return offset === 0 ? Situ.before(element) : Situ.after(element);
@@ -10973,24 +10973,24 @@ var mobile = (function (exports) {
       var memIcon = record(Container.sketch({
         dom: dom$2('<div aria-hidden="true" class="${prefix}-mask-tap-icon"></div>'),
         containerBehaviours: derive$1([Toggling.config({
-            toggleClass: Styles.resolve('mask-tap-icon-selected'),
-            toggleOnExecute: false
-          })])
+          toggleClass: Styles.resolve('mask-tap-icon-selected'),
+          toggleOnExecute: false
+        })])
       }));
       var onViewThrottle = first$4(onView, 200);
       return Container.sketch({
         dom: dom$2('<div class="${prefix}-disabled-mask"></div>'),
         components: [Container.sketch({
-            dom: dom$2('<div class="${prefix}-content-container"></div>'),
-            components: [Button.sketch({
-                dom: dom$2('<div class="${prefix}-content-tap-section"></div>'),
-                components: [memIcon.asSpec()],
-                action: function (button) {
-                  onViewThrottle.throttle();
-                },
-                buttonBehaviours: derive$1([Toggling.config({ toggleClass: Styles.resolve('mask-tap-icon-selected') })])
-              })]
+          dom: dom$2('<div class="${prefix}-content-container"></div>'),
+          components: [Button.sketch({
+            dom: dom$2('<div class="${prefix}-content-tap-section"></div>'),
+            components: [memIcon.asSpec()],
+            action: function (button) {
+              onViewThrottle.throttle();
+            },
+            buttonBehaviours: derive$1([Toggling.config({ toggleClass: Styles.resolve('mask-tap-icon-selected') })])
           })]
+        })]
       });
     };
     var TapToEditMask = { sketch: sketch$a };
@@ -11072,9 +11072,9 @@ var mobile = (function (exports) {
       return { behaviours: derive$1([Replacing.config({})]) };
     };
     var parts$2 = constant([optional({
-        name: 'groups',
-        overrides: enhanceGroups
-      })]);
+      name: 'groups',
+      overrides: enhanceGroups
+    })]);
 
     var factory$4 = function (detail, components$$1, spec, _externals) {
       var setGroups = function (toolbar$$1, groups) {
@@ -11122,9 +11122,9 @@ var mobile = (function (exports) {
       field$1('tgroupBehaviours', [Keying])
     ]);
     var parts$3 = constant([group({
-        name: 'items',
-        unit: 'item'
-      })]);
+      name: 'items',
+      unit: 'item'
+    })]);
 
     var factory$5 = function (detail, components, spec, _externals) {
       return {
@@ -11132,9 +11132,9 @@ var mobile = (function (exports) {
         'dom': detail.dom,
         'components': components,
         'behaviours': augment(detail.tgroupBehaviours, [Keying.config({
-            mode: 'flow',
-            selector: detail.markers.itemSelector
-          })]),
+          mode: 'flow',
+          selector: detail.markers.itemSelector
+        })]),
         domModification: { attributes: { role: 'toolbar' } }
       };
     };
@@ -11182,16 +11182,16 @@ var mobile = (function (exports) {
       markAsHorizontal: markAsHorizontal
     };
 
-    function ScrollingToolbar () {
+    function ScrollingToolbar() {
       var makeGroup = function (gSpec) {
         var scrollClass = gSpec.scrollable === true ? '${prefix}-toolbar-scrollable-group' : '';
         return {
           dom: dom$2('<div aria-label="' + gSpec.label + '" class="${prefix}-toolbar-group ' + scrollClass + '"></div>'),
           tgroupBehaviours: derive$1([config('adhoc-scrollable-toolbar', gSpec.scrollable === true ? [runOnInit(function (component, simulatedEvent) {
-                set$3(component.element(), 'overflow-x', 'auto');
-                Scrollables.markAsHorizontal(component.element());
-                Scrollable.register(component.element());
-              })] : [])]),
+            set$3(component.element(), 'overflow-x', 'auto');
+            Scrollables.markAsHorizontal(component.element());
+            Scrollable.register(component.element());
+          })] : [])]),
           components: [Container.sketch({ components: [ToolbarGroup.parts().items({})] })],
           markers: { itemSelector: '.' + Styles.resolve('toolbar-group-item') },
           items: gSpec.items
@@ -11214,9 +11214,9 @@ var mobile = (function (exports) {
         dom: { classes: [Styles.resolve('toolstrip')] },
         components: [premade$1(toolbar)],
         containerBehaviours: derive$1([Toggling.config({
-            toggleClass: Styles.resolve('android-selection-context-toolbar'),
-            toggleOnExecute: false
-          })])
+          toggleClass: Styles.resolve('android-selection-context-toolbar'),
+          toggleOnExecute: false
+        })])
       }));
       var resetGroups = function () {
         Toolbar.setGroups(toolbar, initGroups.get());
@@ -11410,16 +11410,16 @@ var mobile = (function (exports) {
     };
 
     var SlidingApis = /*#__PURE__*/Object.freeze({
-        grow: grow,
-        shrink: shrink,
-        immediateShrink: immediateShrink,
-        hasGrown: hasGrown,
-        hasShrunk: hasShrunk,
-        isGrowing: isGrowing,
-        isShrinking: isShrinking,
-        isTransitioning: isTransitioning,
-        toggleGrow: toggleGrow,
-        disableTransitions: disableTransitions
+      grow: grow,
+      shrink: shrink,
+      immediateShrink: immediateShrink,
+      hasGrown: hasGrown,
+      hasShrunk: hasShrunk,
+      isGrowing: isGrowing,
+      isShrinking: isShrinking,
+      isTransitioning: isTransitioning,
+      toggleGrow: toggleGrow,
+      disableTransitions: disableTransitions
     });
 
     var exhibit$5 = function (base, slideConfig) {
@@ -11434,21 +11434,21 @@ var mobile = (function (exports) {
     };
     var events$a = function (slideConfig, slideState) {
       return derive([runOnSource(transitionend(), function (component, simulatedEvent) {
-          var raw = simulatedEvent.event().raw();
-          if (raw.propertyName === slideConfig.dimension.property) {
-            disableTransitions(component, slideConfig);
-            if (slideState.isExpanded()) {
-              remove$5(component.element(), slideConfig.dimension.property);
-            }
-            var notify = slideState.isExpanded() ? slideConfig.onGrown : slideConfig.onShrunk;
-            notify(component);
+        var raw = simulatedEvent.event().raw();
+        if (raw.propertyName === slideConfig.dimension.property) {
+          disableTransitions(component, slideConfig);
+          if (slideState.isExpanded()) {
+            remove$5(component.element(), slideConfig.dimension.property);
           }
-        })]);
+          var notify = slideState.isExpanded() ? slideConfig.onGrown : slideConfig.onShrunk;
+          notify(component);
+        }
+      })]);
     };
 
     var ActiveSliding = /*#__PURE__*/Object.freeze({
-        exhibit: exhibit$5,
-        events: events$a
+      exhibit: exhibit$5,
+      events: events$a
     });
 
     var SlidingSchema = [
@@ -11497,7 +11497,7 @@ var mobile = (function (exports) {
     };
 
     var SlidingState = /*#__PURE__*/Object.freeze({
-        init: init$5
+      init: init$5
     });
 
     var Sliding = create$1({
@@ -11781,7 +11781,7 @@ var mobile = (function (exports) {
         descHandler: constant(handler)
       };
     };
-    function EventRegistry () {
+    function EventRegistry() {
       var registry = {};
       var registerId = function (extraArgs, id, events) {
         each(events, function (v, k) {
@@ -11829,7 +11829,7 @@ var mobile = (function (exports) {
       };
     }
 
-    function Registry () {
+    function Registry() {
       var events = EventRegistry();
       var components = {};
       var readOrTag = function (component) {
@@ -12032,18 +12032,18 @@ var mobile = (function (exports) {
 
     var READ_ONLY_MODE_CLASS = constant(Styles.resolve('readonly-mode'));
     var EDIT_MODE_CLASS = constant(Styles.resolve('edit-mode'));
-    function OuterContainer (spec) {
+    function OuterContainer(spec) {
       var root = build$1(Container.sketch({
         dom: { classes: [Styles.resolve('outer-container')].concat(spec.classes) },
         containerBehaviours: derive$1([Swapping.config({
-            alpha: READ_ONLY_MODE_CLASS(),
-            omega: EDIT_MODE_CLASS()
-          })])
+          alpha: READ_ONLY_MODE_CLASS(),
+          omega: EDIT_MODE_CLASS()
+        })])
       }));
       return takeover(root);
     }
 
-    function AndroidRealm (scrollIntoView) {
+    function AndroidRealm(scrollIntoView) {
       var alloy = OuterContainer({ classes: [Styles.resolve('android-container')] });
       var toolbar = ScrollingToolbar();
       var webapp = api$2();
@@ -12155,9 +12155,9 @@ var mobile = (function (exports) {
       };
       var captureInput = bind$3(page, 'keydown', function (evt) {
         if (!contains([
-            'input',
-            'textarea'
-          ], name(evt.target()))) {
+          'input',
+          'textarea'
+        ], name(evt.target()))) {
           toEditing();
         }
       });
@@ -12278,7 +12278,7 @@ var mobile = (function (exports) {
         editorApi.onToEditing(toEditing),
         editorApi.onToReading(toReading),
         bind$3(editorApi.doc(), 'touchend', function (touchEvent) {
-          if (eq(editorApi.html(), touchEvent.target()) || eq(editorApi.body(), touchEvent.target())) ;
+          if (eq(editorApi.html(), touchEvent.target()) || eq(editorApi.body(), touchEvent.target()));
         }),
         bind$3(toolstrip, 'transitionend', function (transitionEvent) {
           if (transitionEvent.raw().propertyName === 'height') {
@@ -12313,7 +12313,7 @@ var mobile = (function (exports) {
     };
     var IosEvents = { initEvents: initEvents$1 };
 
-    function FakeSelection (win, frame) {
+    function FakeSelection(win, frame) {
       var doc = win.document;
       var container = Element$$1.fromTag('div');
       add$2(container, Styles.resolve('unfocused-selections'));
@@ -12851,7 +12851,7 @@ var mobile = (function (exports) {
       moveWindowScroll: moveWindowScroll
     };
 
-    function BackgroundActivity (doAction) {
+    function BackgroundActivity(doAction) {
       var action = Cell(LazyValue.pure({}));
       var start = function (value) {
         var future = LazyValue.nu(function (callback) {
@@ -13188,7 +13188,7 @@ var mobile = (function (exports) {
     };
     var IosWebapp = { produce: produce$1 };
 
-    function IosRealm (scrollIntoView) {
+    function IosRealm(scrollIntoView) {
       var alloy = OuterContainer({ classes: [Styles.resolve('ios-container')] });
       var toolbar = ScrollingToolbar();
       var webapp = api$2();
@@ -13438,16 +13438,16 @@ var mobile = (function (exports) {
             label: 'The first group',
             scrollable: false,
             items: [Buttons.forToolbar('back', function () {
-                editor.selection.collapse();
-                realm.exit();
-              }, {})]
+              editor.selection.collapse();
+              realm.exit();
+            }, {})]
           };
           var backToReadOnlyGroup = {
             label: 'Back to read only',
             scrollable: false,
             items: [Buttons.forToolbar('readonly-back', function () {
-                setReadOnly(dynamicGroup, readOnlyGroups, mainGroups, true);
-              }, {})]
+              setReadOnly(dynamicGroup, readOnlyGroups, mainGroups, true);
+            }, {})]
           };
           var readOnlyGroup = {
             label: 'The read only mode group',
@@ -13501,7 +13501,7 @@ var mobile = (function (exports) {
       };
     };
     global$1.add('mobile', renderMobileTheme);
-    function Theme () {
+    function Theme() {
     }
 
     exports.renderMobileTheme = renderMobileTheme;
@@ -13509,5 +13509,5 @@ var mobile = (function (exports) {
 
     return exports;
 
-}({}));
+  }({}));
 })();
