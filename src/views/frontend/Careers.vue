@@ -25,43 +25,40 @@
                 us.</span
               >
             </div>
-            <div class="content">
-              <div class="row py-30">
+            <!-- accordion -->
+            <div class="container">
+              <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div
-                  v-for="(career, index) in career.data"
-                  :key="index"
-                  class="col-md-6 col-xl-3"
+                  class="accordion-item"
+                  v-for="(career, id) in career.data"
+                  :key="id"
                 >
-                  <!-- Developer Plan -->
-                  <a
-                    class="
-                      block block-link-pop block-rounded block-bordered
-                      text-center
-                    "
-                    href="mailto:recruitment@simetriputra.co.id"
+                  <h2 class="accordion-header" :id="career.id_career">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      :data-bs-target="'#flush-collapseOne' + career.id_career"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      {{ career.nama_career }}
+                    </button>
+                  </h2>
+                  <div
+                    :id="'flush-collapseOne' + career.id_career"
+                    class="accordion-collapse collapse"
+                    :aria-labelledby="career.id_career"
+                    data-bs-parent="#accordionFlushExample"
+                    style=""
                   >
-                    <div class="block-header">
-                      <h3 class="block-title font-w600">
-                        <i class="fa fa-briefcase"></i> {{ career.nama_career }}
-                      </h3>
-                    </div>
-                    <div class="block-content bg-body-light">
-                      <img
-                        class="rounded mx-auto d-block"
-                        alt="jobpicture"
-                        :src="'http://127.0.0.1:8000/' + career.gambar_career"
-                      />
-                    </div>
-                    <div class="block-content">
+                    <div class="accordion-body">
                       <p><strong>Job Description:</strong></p>
                       <p>{{ career.desc_career }}</p>
-                    </div>
-                    <div class="block-content">
+
                       <p><strong>Job Requirements:</strong></p>
                       <p>{{ career.require_career }}</p>
-                    </div>
-                    <div class="block-content block-content-full">
-                      <span
+                      <a
                         class="
                           btn
                           btn-hero
@@ -70,15 +67,16 @@
                           btn-noborder
                           btn-primary
                         "
-                        >Apply Now</span
+                        :href="'mailto:' + career.email_career"
+                        >Apply Now</a
                       >
                     </div>
-                  </a>
-                  <!-- END Developer Plan -->
+                  </div>
                 </div>
               </div>
             </div>
 
+            <!-- accordion end -->
             <div id="faqs-list">
               <div class="row align-items-stretch grid-border clearfix"></div>
             </div>
@@ -94,8 +92,8 @@
   <!-- #content end -->
 </template>
 <script>
-import axios from "axios";
 import { onMounted, ref } from "vue";
+import axios from "axios";
 export default {
   setup() {
     let career = ref([]);
@@ -114,66 +112,5 @@ export default {
       career,
     };
   },
-  methods: {
-    toggleOpen: function (index) {
-      this.career = this.career.map((joblist, i) => {
-        if (index === i) {
-          joblist.open = !joblist.open;
-        }
-
-        return joblist;
-      });
-    },
-  },
 };
 </script>
-<style>
-/* .joblist {
-  display: block;
-  width: 100%;
-  max-width: 800px;
-  margin: 15px auto;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  background-color: #fff;
-}
-
-.toggle {
-  position: relative;
-  color: #3c3c3c;
-  font-size: 20px;
-  height: 20px;
-  transition: all 0.4s linear;
-}
-
-.toggle::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0px;
-  transform: translateY(-50%);
-  rotate: (0deg);
-
-  width: 35px;
-  margin: 8px;
-  height: 35px;
-  background-image: url("../src/assets/style/images/bluearrow.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.toggle-content {
-  color: #3c3c3c;
-  font-size: 18px;
-  opacity: 0;
-  max-height: 0px;
-  overflow-y: hidden;
-  transition: all 0.4s ease-out;
-}
-
-.joblist.open {
-  background-color: red;
-} */
-</style>
