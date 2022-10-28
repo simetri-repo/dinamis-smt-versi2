@@ -27,20 +27,21 @@
             </div>
             <!-- accordion -->
             <div class="container">
-              <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion accordion-flush" id="app">
                 <div
                   class="accordion-item"
-                  v-for="(career, id) in career.data"
+                  v-for="(career, id) in career"
                   :key="id"
                 >
                   <h2 class="accordion-header" :id="career.id_career">
                     <button
-                      class="accordion-button collapsed"
+                      class="accordion-button collapsed fw-bold"
                       type="button"
                       data-bs-toggle="collapse"
                       :data-bs-target="'#flush-collapseOne' + career.id_career"
                       aria-expanded="false"
                       aria-controls="flush-collapseOne"
+                      style=""
                     >
                       {{ career.nama_career }}
                     </button>
@@ -49,24 +50,30 @@
                     :id="'flush-collapseOne' + career.id_career"
                     class="accordion-collapse collapse"
                     :aria-labelledby="career.id_career"
-                    data-bs-parent="#accordionFlushExample"
+                    data-bs-parent="#app"
                     style=""
                   >
                     <div class="accordion-body">
-                      <p><strong>Job Description:</strong></p>
-                      <p>{{ career.desc_career }}</p>
+                      <div class="row">
+                        <div
+                          class="col-md-6 text-start"
+                          style="padding: 10px 0px 0px 30px; dispaly: block"
+                        >
+                          <p><strong>Job Description:</strong></p>
+                          <p v-html="career.desc_career"></p>
+                        </div>
+                        <div
+                          class="col-md-6 text-start"
+                          style="padding: 10px 0px 0px 30px; dispaly: block"
+                        >
+                          <p><strong>Job Requirements:</strong></p>
+                          <p v-html="career.require_career"></p>
+                        </div>
+                      </div>
 
-                      <p><strong>Job Requirements:</strong></p>
-                      <p>{{ career.require_career }}</p>
                       <a
-                        class="
-                          btn
-                          btn-hero
-                          btn-sm
-                          btn-rounded
-                          btn-noborder
-                          btn-primary
-                        "
+                        class="btn btn-hero btn-sm btn-rounded btn-noborder"
+                        style="background: rgb(8, 66, 124); color: #e8e8e8"
                         :href="'mailto:' + career.email_career"
                         >Apply Now</a
                       >
@@ -114,3 +121,18 @@ export default {
   },
 };
 </script>
+<style>
+.accordion-button {
+  font-size: 20px;
+}
+
+.accordion-item {
+  border: 1px solid rgba(35, 65, 100, 0.15);
+}
+
+.accordion-button:not(.collapsed) {
+  color: inherit;
+  background: rgb(8, 66, 124);
+  color: #e8e8e8;
+}
+</style>
