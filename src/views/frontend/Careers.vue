@@ -26,7 +26,7 @@
               >
             </div>
             <!-- accordion -->
-            <div class="container">
+            <div class="container row">
               <div class="accordion accordion-flush" id="app">
                 <div
                   class="accordion-item"
@@ -81,6 +81,21 @@
                   </div>
                 </div>
               </div>
+              <!-- left side -->
+              <!-- <div class="col-md-6">
+                <div class="card" style="width: 18rem">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                  </div>
+                </div>
+              </div> -->
             </div>
 
             <!-- accordion end -->
