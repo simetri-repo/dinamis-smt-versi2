@@ -29,7 +29,7 @@
             >
               <v-lazy-image
                 :src="
-                  'https://smp-admweb.sinarmetrindo.co.id/' +
+                  'https://admin.sinarmetrindo.co.id/' +
                   show_certificate.gambar_certificate
                 "
                 style="border-radius: 2px"
@@ -58,7 +58,7 @@ export default {
     let show_certificate = ref([]);
     onMounted(() => {
       axios
-        .get("https://smp-admweb.sinarmetrindo.co.id/api/show_certificate")
+        .get("https://admin.sinarmetrindo.co.id/index.php/api/show_certificate")
         .then((result) => {
           console.log(result);
           show_certificate.value = result.data;

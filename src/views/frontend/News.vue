@@ -32,7 +32,7 @@
                     ><v-lazy-image
                       class="image_fade"
                       :src="
-                        'https://smp-admweb.sinarmetrindo.co.id/' +
+                        'https://admin.sinarmetrindo.co.id/' +
                         show_berita_hot.gambar_berita
                       "
                       alt="Standard Post with Image"
@@ -82,7 +82,7 @@
                     ><v-lazy-image
                       class="image_fade"
                       :src="
-                        'https://smp-admweb.sinarmetrindo.co.id/' +
+                        'https://admin.sinarmetrindo.co.id/' +
                         show_berita_top.gambar_berita
                       "
                       alt="Standard Post with Image"
@@ -128,7 +128,7 @@
                     ><v-lazy-image
                       class="image_fade"
                       :src="
-                        'https://smp-admweb.sinarmetrindo.co.id/' +
+                        'https://admin.sinarmetrindo.co.id/' +
                         show_berita.gambar_berita
                       "
                       alt="Standard Post with Image"
@@ -208,7 +208,7 @@ export default {
     let show_berita_top = ref([]);
     onMounted(() => {
       axios
-        .get("https://smp-admweb.sinarmetrindo.co.id/api/show_berita")
+        .get("https://admin.sinarmetrindo.co.id/index.php/api/show_berita")
         .then((result) => {
           console.log(result);
           show_berita.value = result.data;
@@ -218,7 +218,7 @@ export default {
         });
 
       axios
-        .get("https://smp-admweb.sinarmetrindo.co.id/api/show_berita_hot")
+        .get("https://admin.sinarmetrindo.co.id/index.php/api/show_berita_hot")
         .then((result) => {
           console.log(result);
           show_berita_hot.value = result.data;
@@ -228,7 +228,7 @@ export default {
         });
 
       axios
-        .get("https://smp-admweb.sinarmetrindo.co.id/api/show_berita_top")
+        .get("https://admin.sinarmetrindo.co.id/index.php/api/show_berita_top")
         .then((result) => {
           console.log(result);
           show_berita_top.value = result.data;
