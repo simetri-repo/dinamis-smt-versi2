@@ -19,7 +19,7 @@
         <div class="row center" style="max-width: 2400px">
           <div class="col-lg-12">
             <div class="heading-block center">
-              <h3>Simetri Job Career</h3>
+              <h3 class="notranslate">Simetri Job Career</h3>
               <span
                 >How we do things resonates with you, we welcome you to join
                 us.</span
@@ -94,41 +94,35 @@
                     <hr />
                     <h6 class="card-subtitle mb-4 text-muted"></h6>
 
-                    <ul
-                      class="card-text text-start list-unstyled"
-                      style="font-size: 14px"
-                    >
+                    <ul class="card-text text-start list-unstyled">
                       <li class="listku">
-                        <i class="fa fa-check"> Gaji yang menarik</i>
+                        <i class="fa fa-check"> </i>Gaji yang menarik
                       </li>
                       <li class="listku">
-                        <i class="fa fa-check">
-                          Komisi menarik untuk posisi sales dan marketing</i
-                        >
+                        <i class="fa fa-check"> </i>Komisi menarik untuk posisi
+                        sales dan marketing
                       </li>
                       <li class="listku">
-                        <i class="fa fa-check"> Bonus tahunan</i>
+                        <i class="fa fa-check"> </i>Bonus tahunan
                       </li>
-                      <li class="listku"><i class="fa fa-check"> BPJS</i></li>
+                      <li class="listku"><i class="fa fa-check"> </i>BPJS</li>
                       <li class="listku">
-                        <i class="fa fa-check">
-                          Jaminan kesehatan, gigi, dan kacamata</i
-                        >
-                      </li>
-                      <li class="listku">
-                        <i class="fa fa-check"> Jaminan hari tua</i>
+                        <i class="fa fa-check"> </i>Jaminan kesehatan, gigi, dan
+                        kacamata
                       </li>
                       <li class="listku">
-                        <i class="fa fa-check"> Asuransi jiwa</i>
+                        <i class="fa fa-check"> </i>Jaminan hari tua
                       </li>
                       <li class="listku">
-                        <i class="fa fa-check">
-                          Disability plans, including sick pay</i
-                        >
+                        <i class="fa fa-check"> </i>Asuransi jiwa
                       </li>
-                      <li class="listku"><i class="fa fa-check"> Cuti</i></li>
                       <li class="listku">
-                        <i class="fa fa-check"> Bantuan relokasi</i>
+                        <i class="fa fa-check"> </i>Disability plans, including
+                        sick pay
+                      </li>
+                      <li class="listku"><i class="fa fa-check"> </i> Cuti</li>
+                      <li class="listku">
+                        <i class="fa fa-check"> </i>Bantuan relokasi
                       </li>
                     </ul>
                   </div>
@@ -190,8 +184,12 @@ export default {
 }
 .listku {
   margin-bottom: 6px;
+  color: rgb(8, 66, 124);
+  font-weight: 700;
+  font-size: 16px;
 }
 .fa {
-  color: rgb(8, 66, 124);
+  color: rgb(215, 25, 33);
+  margin-right: 4px;
 }
 </style>

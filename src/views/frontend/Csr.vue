@@ -112,9 +112,9 @@
               Since 1986, Simetri has contributed to numerous orphanages such
               as:
             </p>
-            <ul style="padding-left: 20px">
+            <ul class="notranslate" style="padding-left: 20px">
               <li>Yayasan Tri Asih, Jakarta</li>
-              <li>Yayasan Kasih Bunda, jakarta</li>
+              <li>Yayasan Kasih Bunda, Jakarta</li>
               <li>Yayasan An Nuriyah, Bekasi</li>
               <li>PA Kasih Mulia Sejati, Jakarta</li>
               <li>PA Si Boncel, Jakarta</li>

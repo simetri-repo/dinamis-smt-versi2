@@ -44,7 +44,7 @@
               9001:2008 in the year 2002. These achievements drive us forward as
               well as educate us to be more mature.
               <br />
-              <br />Simetri intends to produce high quality products that not
+              <br />`Simetri` intends to produce high quality products that not
               only do they ease daily lives of people, but also protect them
               from any accident that prones to occur when dealing with
               electricity. We innovate on how the product can be optimized for
@@ -54,8 +54,8 @@
               switchboards are the safest and the most reliable in this
               industry. Our technicians are always ready to provide excellent
               service.Powered by highly motivated and highly skilled employees,
-              Simetri are ready to challenge current competitive era with high
-              determination. Guided by Simetri’s fundamental philosophies, we
+              `Simetri` are ready to challenge current competitive era with high
+              determination. Guided by `Simetri’s` fundamental philosophies, we
               persistently innovate the synchronization between switchboards and
               automation, improve product quality and service satisfaction, and
               contribute to society and environment.
@@ -87,7 +87,7 @@
         <div class="row clearfix">
           <!-- visi -->
           <div class="col-lg-12 center">
-            <h3>V I S I</h3>
+            <h3>VISSION</h3>
             <p align="justify">
               <span class="notranslate">Simetri </span>believes in sustainable
               growth. Together with the nation’s development, the company puts
@@ -100,7 +100,7 @@
           </div>
           <!-- misi -->
           <div class="col-lg-12 center">
-            <h3>MISI</h3>
+            <h3>MISSION</h3>
             <p align="justify">
               The name <span class="notranslate"> Simetri </span> is associated
               with the word symmetry which means balance and stability. The core
@@ -109,12 +109,12 @@
               symbolizes the natural cycle of life. This cycle embodies the
               organization, and which continuously works for sustainable
               development, so that in the future everyone can leave a better and
-              safer world for our future generations. Simetri believes that the
-              company must always strives to be the best company amid intense
-              competition by providing high quality product with competitive
-              price and good service. In doing so, Simetri will transform
-              themselves into reliable partner for everyone that has interest
-              within company’s business.
+              safer world for our future generations. `Simetri` believes that
+              the company must always strives to be the best company amid
+              intense competition by providing high quality product with
+              competitive price and good service. In doing so, Simetri will
+              transform themselves into reliable partner for everyone that has
+              interest within company’s business.
             </p>
           </div>
         </div>

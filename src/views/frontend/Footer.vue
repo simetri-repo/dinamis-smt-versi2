@@ -140,9 +140,9 @@
             <div class="row">
               <div class="col-lg-6 bottommargin-sm">
                 <div class="footer-big-contacts">
-                  <span>Jakarta:</span>
+                  <span>Jakarta :</span>
                   <p style="padding-bottom: -50px">021-58906959</p>
-                  <span>Surabaya:</span>
+                  <span>Surabaya :</span>
                   <p>031-5967623</p>
                 </div>
               </div>
@@ -219,8 +219,8 @@
     <div id="copyrights">
       <div class="container clearfix">
         <div class="col_half">
-          Copyrights &copy; 2021 All Rights Reserved by Sinar Metrindo
-          Perkasa.<br />
+          Copyrights &copy; {{ currentDate() }} All Rights Reserved by Sinar
+          Metrindo Perkasa.<br />
           <div class="copyright-links">
             <a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a>
           </div>
