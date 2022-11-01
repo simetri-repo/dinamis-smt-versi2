@@ -34,7 +34,11 @@
                 "
                 style="border-radius: 2px"
               />
-              <h3 style="font-size: 18px" class="m-4" translate="no">
+              <h3
+                style="font-size: 18px"
+                class="m-4 notranslate"
+                translate="no"
+              >
                 {{ show_certificate.nama_certificate }}
               </h3>
               <br />

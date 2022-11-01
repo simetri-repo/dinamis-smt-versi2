@@ -16,7 +16,7 @@
   <section id="content">
     <div class="content-wrap">
       <div class="container">
-        <div class="row center" style="max-width: 2400px">
+        <div class="ro" style="max-width: 2400px">
           <div class="col-lg-12">
             <div class="heading-block center">
               <h3 class="notranslate">Simetri Job Career</h3>
@@ -27,7 +27,7 @@
             </div>
             <!-- accordion -->
             <div class="container row">
-              <div class="accordion accordion-flush col-md-8" id="app">
+              <div class="accordion accordion-flush" id="app">
                 <div
                   class="accordion-item"
                   v-for="(career, id) in career"
@@ -35,7 +35,7 @@
                 >
                   <h2 class="accordion-header" :id="career.id_career">
                     <button
-                      class="accordion-button collapsed fw-bold"
+                      class="accordion-button collapsed fw-bold notranslate"
                       type="button"
                       data-bs-toggle="collapse"
                       :data-bs-target="'#flush-collapseOne' + career.id_career"
@@ -82,52 +82,41 @@
                 </div>
               </div>
               <!-- left side -->
-              <div class="col-md-4">
-                <div
-                  class="card shadow p-3 bg-body rounded"
-                  style="width: auto; padding: 5px, 5px, 0px, 0px"
-                >
+              <!-- <div class="col-md-4">
+                <div class="" style="width: auto; padding: 5px, 5px, 0px, 0px">
                   <div class="card-body">
-                    <h5 class="card-title" style="font-size: 20px">
+                    <h5 class="card-title" style="font-size: 18px">
                       Keuntungan
                     </h5>
                     <hr />
                     <h6 class="card-subtitle mb-4 text-muted"></h6>
 
-                    <ul class="card-text text-start list-unstyled">
+                    <ul class="card-text text-start list-bullet">
+                      <li class="listku">Gaji yang menarik</li>
                       <li class="listku">
-                        <i class="fa fa-check"> </i>Gaji yang menarik
+                        Komisi menarik untuk posisi sales dan marketing
+                      </li>
+                      <li class="listku">Bonus tahunan</li>
+                      <li class="listku">BPJS</li>
+                      <li class="listku">
+                        Jaminan kesehatan, gigi, dan kacamata
                       </li>
                       <li class="listku">
-                        <i class="fa fa-check"> </i>Komisi menarik untuk posisi
-                        sales dan marketing
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Beatae sint natus voluptas iste distinctio modi
+                        vel laboriosam dolore ab? Autem necessitatibus dolor
+                        nemo quam ratione obcaecati ab velit ullam asperiores.
                       </li>
+                      <li class="listku">Asuransi jiwa</li>
                       <li class="listku">
-                        <i class="fa fa-check"> </i>Bonus tahunan
+                        Disability plans, including sick pay
                       </li>
-                      <li class="listku"><i class="fa fa-check"> </i>BPJS</li>
-                      <li class="listku">
-                        <i class="fa fa-check"> </i>Jaminan kesehatan, gigi, dan
-                        kacamata
-                      </li>
-                      <li class="listku">
-                        <i class="fa fa-check"> </i>Jaminan hari tua
-                      </li>
-                      <li class="listku">
-                        <i class="fa fa-check"> </i>Asuransi jiwa
-                      </li>
-                      <li class="listku">
-                        <i class="fa fa-check"> </i>Disability plans, including
-                        sick pay
-                      </li>
-                      <li class="listku"><i class="fa fa-check"> </i> Cuti</li>
-                      <li class="listku">
-                        <i class="fa fa-check"> </i>Bantuan relokasi
-                      </li>
+                      <li class="listku">Cuti</li>
+                      <li class="listku">Bantuan relokasi</li>
                     </ul>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <!-- accordion end -->
@@ -170,7 +159,7 @@ export default {
 </script>
 <style>
 .accordion-button {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .accordion-item {
@@ -185,11 +174,12 @@ export default {
 .listku {
   margin-bottom: 6px;
   color: rgb(8, 66, 124);
-  font-weight: 700;
-  font-size: 16px;
+  margin-left: 6px;
+  font-size: 12px;
+  text-align: justify;
 }
 .fa {
-  color: rgb(215, 25, 33);
+  color: rgb(8, 66, 124);
   margin-right: 4px;
 }
 </style>
