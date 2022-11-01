@@ -89,31 +89,32 @@
           <div class="col-lg-12 center">
             <h3>V I S I</h3>
             <p align="justify">
-              Simetri believes in sustainable growth. Together with the nation’s
-              development, the company puts utmost commitment to survive and
-              ever grow for the better future. The company dedicates itself to
-              be the best business partner for all stakeholders including the
-              shareholders, suppliers, customers, government bodies, communities
-              and competitors. Simetri always believes that stakeholder interest
-              is company’s best command.
+              <span class="notranslate">Simetri </span>believes in sustainable
+              growth. Together with the nation’s development, the company puts
+              utmost commitment to survive and ever grow for the better future.
+              The company dedicates itself to be the best business partner for
+              all stakeholders including the shareholders, suppliers, customers,
+              government bodies, communities and competitors. Simetri always
+              believes that stakeholder interest is company’s best command.
             </p>
           </div>
           <!-- misi -->
           <div class="col-lg-12 center">
             <h3>MISI</h3>
             <p align="justify">
-              The name Simetri is associated with the word symmetry which means
-              balance and stability. The core of the company’s business is Sinar
-              (Light), Metal (Metal), and Listrik (Electricity). The logo takes
-              the form of a circle which symbolizes the natural cycle of life.
-              This cycle embodies the organization, and which continuously works
-              for sustainable development, so that in the future everyone can
-              leave a better and safer world for our future generations. Simetri
-              believes that the company must always strives to be the best
-              company amid intense competition by providing high quality product
-              with competitive price and good service. In doing so, Simetri will
-              transform themselves into reliable partner for everyone that has
-              interest within company’s business.
+              The name <span class="notranslate"> Simetri </span> is associated
+              with the word symmetry which means balance and stability. The core
+              of the company’s business is Sinar (Light), Metal (Metal), and
+              Listrik (Electricity). The logo takes the form of a circle which
+              symbolizes the natural cycle of life. This cycle embodies the
+              organization, and which continuously works for sustainable
+              development, so that in the future everyone can leave a better and
+              safer world for our future generations. Simetri believes that the
+              company must always strives to be the best company amid intense
+              competition by providing high quality product with competitive
+              price and good service. In doing so, Simetri will transform
+              themselves into reliable partner for everyone that has interest
+              within company’s business.
             </p>
           </div>
         </div>
@@ -147,7 +148,7 @@
                     style="width: 40px; height: 40px"
                   />
                   <div style="margin-top: 20px">
-                    <p>
+                    <p class="notranslate">
                       PT Sinar Metrindo Perkasa. <br />1986 -
                       {{ currentDate() }}
                     </p>

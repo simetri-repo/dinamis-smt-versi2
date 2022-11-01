@@ -15,8 +15,8 @@
 		============================================= -->
   <section id="content">
     <div class="content-wrap">
-      <div class="container clearfix">
-        <div class="row clearfix center divcenter" style="max-width: 1200px">
+      <div class="container">
+        <div class="row center" style="max-width: 2400px">
           <div class="col-lg-12">
             <div class="heading-block center">
               <h3>Simetri Job Career</h3>
@@ -27,7 +27,7 @@
             </div>
             <!-- accordion -->
             <div class="container row">
-              <div class="accordion accordion-flush" id="app">
+              <div class="accordion accordion-flush col-md-8" id="app">
                 <div
                   class="accordion-item"
                   v-for="(career, id) in career"
@@ -82,20 +82,58 @@
                 </div>
               </div>
               <!-- left side -->
-              <!-- <div class="col-md-6">
-                <div class="card" style="width: 18rem">
+              <div class="col-md-4">
+                <div
+                  class="card shadow p-3 bg-body rounded"
+                  style="width: auto; padding: 5px, 5px, 0px, 0px"
+                >
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <h5 class="card-title" style="font-size: 20px">
+                      Keuntungan
+                    </h5>
+                    <hr />
+                    <h6 class="card-subtitle mb-4 text-muted"></h6>
+
+                    <ul
+                      class="card-text text-start list-unstyled"
+                      style="font-size: 14px"
+                    >
+                      <li class="listku">
+                        <i class="fa fa-check"> Gaji yang menarik</i>
+                      </li>
+                      <li class="listku">
+                        <i class="fa fa-check">
+                          Komisi menarik untuk posisi sales dan marketing</i
+                        >
+                      </li>
+                      <li class="listku">
+                        <i class="fa fa-check"> Bonus tahunan</i>
+                      </li>
+                      <li class="listku"><i class="fa fa-check"> BPJS</i></li>
+                      <li class="listku">
+                        <i class="fa fa-check">
+                          Jaminan kesehatan, gigi, dan kacamata</i
+                        >
+                      </li>
+                      <li class="listku">
+                        <i class="fa fa-check"> Jaminan hari tua</i>
+                      </li>
+                      <li class="listku">
+                        <i class="fa fa-check"> Asuransi jiwa</i>
+                      </li>
+                      <li class="listku">
+                        <i class="fa fa-check">
+                          Disability plans, including sick pay</i
+                        >
+                      </li>
+                      <li class="listku"><i class="fa fa-check"> Cuti</i></li>
+                      <li class="listku">
+                        <i class="fa fa-check"> Bantuan relokasi</i>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-              </div> -->
+              </div>
             </div>
 
             <!-- accordion end -->
@@ -122,7 +160,7 @@ export default {
 
     onMounted(() => {
       axios
-        .get("http://127.0.0.1:8000/api/show_career")
+        .get("https://admin.sinarmetrindo.co.id/index.php/api/show_career")
         .then((result) => {
           career.value = result.data;
         })
@@ -149,5 +187,11 @@ export default {
   color: inherit;
   background: rgb(8, 66, 124);
   color: #e8e8e8;
+}
+.listku {
+  margin-bottom: 6px;
+}
+.fa {
+  color: rgb(8, 66, 124);
 }
 </style>

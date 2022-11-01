@@ -27,6 +27,7 @@
 <script>
 import bawah from "./views/frontend/Footer.vue";
 import { ListLoader, CodeLoader, BulletListLoader } from "vue-content-loader";
+import ButtonCounter from "./components/ButtonCounter.vue";
 
 export default {
   name: "App",
@@ -35,6 +36,7 @@ export default {
     CodeLoader,
     ListLoader,
     bawah,
+    ButtonCounter,
   },
   data() {
     return {
