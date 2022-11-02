@@ -63,11 +63,25 @@
           </div>
           <div class="col-12">
             <a
-              :href="`Company_Profile_Simetri.pdf`"
+              :href="`Company_Profile_Simetri_en.pdf`"
               download
-              class="btn btn-lg btn-primary"
+              class="btn btn-lg btn-primary m-1"
             >
-              Download Simetri Compro
+              COMPANY PROFILE
+            </a>
+            <a
+              :href="`Company_Profile_Simetri_id.pdf`"
+              download
+              class="btn btn-lg btn-primary m-1"
+            >
+              PROFIL PERUSAHAAN
+            </a>
+            <a
+              href="Company_Profile_Simetri_chn.pdf"
+              download=""
+              class="btn btn-lg btn-primary m-1"
+            >
+              公司简介
             </a>
             <!-- <a
               href="../../assets/style/images/brosur/Company_Profile_Simetri.pdf"
