@@ -124,7 +124,7 @@
                 <div class="fbox-media">
                   <v-lazy-image
                     :src="
-                      'https://admin.sinarmetrindo.co.id/' +
+                      'https://admin-sinarmetrindo.airartikennels.co.id/' +
                       show_produk.gambar_produk
                     "
                     alt="Why choose Us?"
@@ -220,13 +220,13 @@ export default {
     let show_produk = ref([]);
     onMounted(() => {
       axios
-        .get("https://admin.sinarmetrindo.co.id/index.php/api/show_produk")
+        .get("https://admin-sinarmetrindo.airartikennels.co.id/api/show_produk")
         .then((result) => {
-          console.log(result);
+          // console.log(result);
           show_produk.value = result.data;
         })
         .catch((err) => {
-          console.log(err);
+          console.log('error');
         });
     });
     return {

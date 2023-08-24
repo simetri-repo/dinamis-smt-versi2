@@ -114,11 +114,11 @@
 
             <a
               href="https://twitter.com/sinarmetrindo"
-              class="social-icon si-small si-dark si-twitter"
+              class="social-icon si-small si-dark si-x-twitter"
               target="blank"
             >
-              <i class="fab fa-twitter " style="font-size: 30px;"></i>
-              <i class="fab fa-twitter " style="font-size: 30px;"></i>
+              <i class="fab fa-x-twitter " style="font-size: 30px;"></i>
+              <i class="fab fa-x-twitter " style="font-size: 30px;"></i>
 
             </a>
 

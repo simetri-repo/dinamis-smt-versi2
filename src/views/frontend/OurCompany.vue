@@ -17,6 +17,7 @@
     <div class="content-wrap">
       <!-- philosop -->
       <div class="container clearfix">
+        <img src="/src/assets/style/images/pabrik.jpg" class="mb-5" alt="">
         <div class="row clearfix">
           <div class="col-md-12 center">
             <h3 class="fs-5">WHO WE ARE</h3>

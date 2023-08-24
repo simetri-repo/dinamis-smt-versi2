@@ -29,7 +29,7 @@
             >
               <v-lazy-image
                 :src="
-                  'https://admin.sinarmetrindo.co.id/' +
+                  'https://admin-sinarmetrindo.airartikennels.co.id/' +
                   show_certificate.gambar_certificate
                 "
                 style="border-radius: 2px"
@@ -62,13 +62,15 @@ export default {
     let show_certificate = ref([]);
     onMounted(() => {
       axios
-        .get("https://admin.sinarmetrindo.co.id/index.php/api/show_certificate")
+        .get(
+          "https://admin-sinarmetrindo.airartikennels.co.id/api/show_certificate"
+        )
         .then((result) => {
-          console.log(result);
+          // console.log(result);
           show_certificate.value = result.data;
         })
         .catch((err) => {
-          console.log(err);
+          console.log('error');
         });
     });
     return {

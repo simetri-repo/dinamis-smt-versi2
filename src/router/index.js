@@ -42,6 +42,11 @@ const routes = [
     component: () => import("../views/frontend/News.vue"),
   },
   {
+    path: "/news/:id",
+    name: "NewsDetail",
+    component: () => import("../views/frontend/NewsDetail.vue"),
+  },
+  {
     path: "/careers",
     name: "simetri.careers",
     component: () => import("../views/frontend/Careers.vue"),
@@ -51,36 +56,36 @@ const routes = [
     name: "simetri.certificate",
     component: () => import("../views/frontend/Certificate.vue"),
   },
-  {
-    path: "/news/1",
-    name: "simetri.news1",
-    component: () => import("../views/frontend/News1.vue"),
-  },
-  {
-    path: "/news/2",
-    name: "simetri.news2",
-    component: () => import("../views/frontend/News2.vue"),
-  },
-  {
-    path: "/news/3",
-    name: "simetri.news3",
-    component: () => import("../views/frontend/News3.vue"),
-  },
-  {
-    path: "/news/4",
-    name: "simetri.news4",
-    component: () => import("../views/frontend/News4.vue"),
-  },
-  {
-    path: "/news/5",
-    name: "simetri.news5",
-    component: () => import("../views/frontend/News5.vue"),
-  },
-  {
-    path: "/news/6",
-    name: "simetri.news6",
-    component: () => import("../views/frontend/News6.vue"),
-  },
+  // {
+  //   path: "/news/1",
+  //   name: "simetri.news1",
+  //   component: () => import("../views/frontend/News1.vue"),
+  // },
+  // {
+  //   path: "/news/2",
+  //   name: "simetri.news2",
+  //   component: () => import("../views/frontend/News2.vue"),
+  // },
+  // {
+  //   path: "/news/3",
+  //   name: "simetri.news3",
+  //   component: () => import("../views/frontend/News3.vue"),
+  // },
+  // {
+  //   path: "/news/4",
+  //   name: "simetri.news4",
+  //   component: () => import("../views/frontend/News4.vue"),
+  // },
+  // {
+  //   path: "/news/5",
+  //   name: "simetri.news5",
+  //   component: () => import("../views/frontend/News5.vue"),
+  // },
+  // {
+  //   path: "/news/6",
+  //   name: "simetri.news6",
+  //   component: () => import("../views/frontend/News6.vue"),
+  // },
   {
     path: "/loader",
     name: "simetri.loader",

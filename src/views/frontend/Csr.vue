@@ -109,7 +109,7 @@
             </p>
 
             <p align="justify">
-              Since 1986, Simetri has contributed to numerous orphanages such
+              Simetri has contributed to numerous orphanages such
               as:
             </p>
             <ul class="notranslate" style="padding-left: 20px">
