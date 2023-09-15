@@ -1,0 +1,1 @@
+import{x as e,r as n,o as t,g as r}from"./vendor.f8aca5d7.js";import{_ as a}from"./index.987e8975.js";const s={components:{ContentLoader:e}};function c(p,_,d,f,m,i){const o=n("content-loader");return t(),r(o)}var u=a(s,[["render",c]]);export{u as default};

@@ -5794,6 +5794,8 @@ body.device-touch.device-xs .portfolio-notitle .portfolio-overlay {
   position: relative;
   width: 100%;
   height: auto;
+  /* height: 300px;
+  object-fit: contain; */
 }
 
 .entry-image iframe {

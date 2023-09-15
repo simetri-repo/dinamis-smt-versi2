@@ -12,13 +12,13 @@
   </section>
   <!-- #page-title end -->
   <section id="content">
-    <div class="content-wrap">
+    <div class="content-wrap pt-3">
       <div
         class="container clearfix"
         style="text-align: justify; text-justify: inter-word"
       >
-        <div class="row clearfix py-5 px-5">
-          <div class="col-lg-12">
+        <div class="row clearfix justify-content-center px-0">
+          <div class="col-lg-8">
             <div class="heading-block nobottomborder bottommargin-sm">
               <h3>{{ news.nama_berita }}</h3>
               <span class="fs-6">{{ formatDate(news.update_rilis) }}</span>
@@ -27,8 +27,9 @@
             <div class="divcenter center mb-4">
               <img
                 style="width: 500px"
-                :src="'http://127.0.0.1:8000/' + news.gambar_berita"
-              />
+                :src="'https://admin-sinarmetrindo.airartikennels.co.id/' + news.gambar_berita"
+                />
+                <!-- http://127.0.0.1:8000/ for local -->
             </div>
 
             <div>
@@ -47,7 +48,7 @@
               <!-- {{ news.keterangan_berita }} -->
             </div>
           </div>
-          <div class="col-sm-12">
+          <div class="col-sm-8">
             <router-link
               :to="{ name: 'simetri.news' }"
               class="button button-border button-rounded"
@@ -80,18 +81,18 @@ export default {
     },
     formatDate(date) {
       const months = [
-        "Januari",
-        "Februari",
-        "Maret",
+        "January",
+        "February",
+        "March",
         "April",
-        "Mei",
-        "Juni",
-        "Juli",
-        "Agustus",
+        "May",
+        "June",
+        "July",
+        "August",
         "September",
-        "Oktober",
+        "October",
         "November",
-        "Desember",
+        "December",
       ];
 
       if (!date) {
@@ -99,7 +100,7 @@ export default {
       }
 
       const parts = date.split("-");
-      console.log(parts);
+      // console.log(parts);
       const day = parts[2].split(' ');
       const month = months[parseInt(parts[1] - 1)];
       const year = parts[0];
@@ -109,10 +110,8 @@ export default {
   },
   mounted() {
     axios
-      // .get('https://admin-sinarmetrindo.airartikennels.co.id/api/show_berita_detail/' + this.$route.params.id)
-      .get(
-        "http://127.0.0.1:8000/api/show_berita_detail/" + this.$route.params.id
-      )
+      .get('https://admin-sinarmetrindo.airartikennels.co.id/api/show_berita_detail/' + this.$route.params.id)
+      // .get("http://127.0.0.1:8000/api/show_berita_detail/" + this.$route.params.id)
       .then((response) => {
         // console.log(response);
         this.setNews(response.data[0]);
@@ -122,3 +121,7 @@ export default {
   },
 };
 </script>
+
+<style>
+  /* .heading-block {} */
+</style>

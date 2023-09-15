@@ -14,6 +14,7 @@
     </div>
   </section> -->
   <!-- #page-title end -->
+
   <section
     id="slider"
     class="slider-element slider-parallax swiper_wrapper clearfix"
@@ -27,12 +28,7 @@
   <section id="content">
     <div class="content-wrap">
       <div
-        class="
-          promo promo-light promo-full
-          uppercase
-          bottommargin-lg
-          header-stick
-        "
+        class="promo promo-light promo-full uppercase bottommargin-lg header-stick"
       >
         <div class="container justify-content-sm-center">
           <div class="row g-2">
@@ -182,15 +178,97 @@
       </div>
     </div>
   </section>
+
+  <!-- <div
+  class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+    data-bs-keyboard="false"
+  >
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="../../../src/assets/style/images/carousel/market2.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../../../src/assets/style/images/carousel/market1.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> -->
   <!-- #content end -->
 </template>
 
 <script>
 import sld from "./Slider.vue";
+// import jQuery from 'jQuery'
 export default {
   name: "App",
   components: {
     sld,
   },
+  // mounted() {
+  //   this.showPopup();
+  // },
+  // methods: {
+  //   showPopup() {
+  //     const modal = new bootstrap.Modal(
+  //       document.getElementById("exampleModal")
+  //     );
+  //     modal.show();
+  //   },
+  // },
 };
 </script>
